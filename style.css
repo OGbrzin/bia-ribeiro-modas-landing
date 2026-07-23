@@ -3,7 +3,10 @@
   --white: #FFFFFF;
   --gray-light: #F5F5F5;
   --gray-medium: #8A8A8A;
-  --accent: #C8A97E;
+  --accent: #D97C9B;
+  --accent-hover: #C9688B;
+  --pink-light: #F8E7EE;
+  --pink-vlight: #FDF7F9;
   --radius: 16px;
   --transition-fast: 250ms ease-out;
   --transition-medium: 400ms ease-out;
@@ -132,7 +135,9 @@ button {
   font-size: 14px;
   color: var(--gray-medium);
   font-weight: 400;
-  margin-top: 8px;
+  margin-top: 16px;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
 }
 
 /* Buttons */
@@ -148,8 +153,13 @@ button {
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
 }
 
+.btn i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
 .btn-sm {
-  min-height: 48px;
+  min-height: 46px;
   font-size: 14px;
 }
 
@@ -163,7 +173,7 @@ button {
 }
 
 .btn-primary:hover {
-  background-color: #B5966B;
+  background-color: var(--accent-hover);
 }
 
 .btn-secondary {
@@ -278,9 +288,9 @@ button {
 }
 
 .hero-desc {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.8;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: 32px;
   max-width: 95%;
@@ -330,11 +340,11 @@ button {
 /* Floating Cards in Hero */
 .floating-card {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 8px 16px;
-  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 14px;
+  border-radius: 14px;
   font-size: 12px;
   font-weight: 600;
   color: var(--primary);
@@ -344,10 +354,10 @@ button {
   transform: translateY(20px);
 }
 
-.fc-1 { top: 20%; right: 5%; animation: floatIn 0.5s 0.8s forwards ease-out; }
-.fc-2 { top: 32%; left: 5%; animation: floatIn 0.5s 1.0s forwards ease-out; }
-.fc-3 { top: 48%; right: -2%; animation: floatIn 0.5s 1.2s forwards ease-out; }
-.fc-4 { top: 60%; left: 8%; animation: floatIn 0.5s 1.4s forwards ease-out; }
+.fc-1 { top: 18%; right: 4%; animation: floatIn 0.5s 0.8s forwards ease-out; }
+.fc-2 { top: 28%; left: 4%; animation: floatIn 0.5s 1.0s forwards ease-out; }
+.fc-3 { top: 45%; right: -2%; animation: floatIn 0.5s 1.2s forwards ease-out; }
+.fc-4 { top: 58%; left: 6%; animation: floatIn 0.5s 1.4s forwards ease-out; }
 
 @keyframes floatIn {
   to { opacity: 1; transform: translateY(0); }
@@ -424,6 +434,8 @@ button {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
 }
 
 .produto-card:hover {
@@ -448,7 +460,15 @@ button {
 }
 
 .produto-info {
-  padding: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.produto-card .btn {
+  border-radius: 12px;
+  margin-top: auto;
 }
 
 .produto-nome {
@@ -483,11 +503,12 @@ button {
 .diferencial-card {
   display: flex;
   align-items: center;
-  background-color: var(--gray-light);
-  padding: 24px;
+  background-color: var(--pink-vlight);
+  padding: 24px 32px;
   border-radius: var(--radius);
-  gap: 16px;
+  gap: 20px;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  height: 100%;
 }
 
 .diferencial-card:hover {
@@ -523,9 +544,9 @@ button {
 }
 
 .dif-content p {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--gray-medium);
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .dif-arrow {
@@ -543,12 +564,12 @@ button {
 .instagram-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 16px;
 }
 
 .insta-item {
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -592,20 +613,32 @@ button {
 }
 
 .avaliacao-card {
-  width: 280px;
+  width: 320px;
   background-color: var(--white);
-  padding: 24px;
+  padding: 32px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   scroll-snap-align: center;
   transition: transform var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .av-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   margin-bottom: 16px;
+}
+
+.av-header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .av-avatar {
@@ -632,7 +665,7 @@ button {
   font-size: 14px;
   color: var(--gray-medium);
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 .avaliacoes-summary {
@@ -652,8 +685,10 @@ button {
   background-color: var(--white);
   border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--gray-light);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--pink-light);
+  display: flex;
+  flex-direction: column;
 }
 
 .map-placeholder {
@@ -662,16 +697,22 @@ button {
 }
 
 .loc-info {
-  padding: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .loc-list {
-  margin-top: 16px;
+  margin-top: 24px;
+  width: 100%;
 }
 
 .loc-list li {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   margin-bottom: 12px;
   font-size: 14px;
@@ -710,6 +751,18 @@ button {
 .cta-content {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-content .hero-buttons {
+  width: 100%;
+  max-width: 320px;
+}
+
+.cta-content .btn {
+  border-radius: 12px;
 }
 
 /* Footer */
@@ -772,8 +825,8 @@ button {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   background-color: #25D366;
   color: white;
   border-radius: 50%;
@@ -806,3 +859,52 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Responsividade Mobile First (360px - 430px) */
+@media (max-width: 430px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-title span {
+    font-size: 34px;
+  }
+  
+  .floating-card {
+    padding: 4px 10px;
+  }
+  .fc-1 { top: 12%; right: -2%; }
+  .fc-2 { top: 22%; left: -2%; }
+  .fc-3 { top: 38%; right: -5%; }
+  .fc-4 { top: 52%; left: -2%; }
+
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .diferencial-card {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 24px;
+  }
+  
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
