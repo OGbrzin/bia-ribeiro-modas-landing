@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(() => {
       if (isScrolling) {
-        // Encontra o próximo scroll baseado na largura de um card (280 + 16 gap = 296)
-        const scrollAmount = 296;
+        // Encontra o próximo scroll baseado na largura de um card (320 + 16 gap = 336)
+        const scrollAmount = 336;
         if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 10) {
           track.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
